@@ -1,0 +1,16 @@
+numpy>=1.23
+matplotlib>=3.7
+tqdm>=4.66
+
+# JAX ecosystem
+jax>=0.4
+jaxlib>=0.4
+flax>=0.8
+optax>=0.2
+
+# ODE/SDE solvers used in the notebooks
+diffrax>=0.5
+
+# Optional (only if you want the Wasserstein plots from the notebook)
+# scipy>=1.10
+# pot>=0.9

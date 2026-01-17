@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=65", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "telescoping-posterior"
+version = "0.1.0"
+description = "Telescoping multilevel posterior sampling with a pretrained score network (toy 2D examples)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+
+# Update these fields before publishing to PyPI (optional)
+authors = [{name = "Your Name"}]
+
+dependencies = [
+  "numpy>=1.23",
+  "matplotlib>=3.7",
+  "tqdm>=4.66",
+  "jax>=0.4",
+  "jaxlib>=0.4",
+  "flax>=0.8",
+  "optax>=0.2",
+  "diffrax>=0.5",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
