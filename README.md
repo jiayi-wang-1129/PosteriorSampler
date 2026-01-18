@@ -45,6 +45,22 @@ with covariance proportional to the identity.
   of the spiral that are compatible with the likelihood.
 - By the final level, the selected particles closely align with the
   **true posterior samples** (blue).
+  
+n= 1:
+<img width="629" height="293" alt="Screenshot 2026-01-17 at 8 55 40 PM" src="https://github.com/user-attachments/assets/8f8bfed2-bdfd-4584-b844-294c17b5561f" />
+
+n = 2:
+<img width="623" height="284" alt="Screenshot 2026-01-17 at 8 55 47 PM" src="https://github.com/user-attachments/assets/014518f7-7292-49b3-b5f0-d3594a4cb2e1" />
+
+n = 3:
+<img width="618" height="276" alt="Screenshot 2026-01-17 at 8 55 53 PM" src="https://github.com/user-attachments/assets/c452fc07-2ffc-4656-999d-aa74b32c41c2" />
+
+n = 4:
+<img width="619" height="286" alt="Screenshot 2026-01-17 at 8 56 01 PM" src="https://github.com/user-attachments/assets/bb291758-aacb-44fa-bd57-22d4e366846f" />
+
+n = 5:
+<img width="617" height="285" alt="Screenshot 2026-01-17 at 8 56 11 PM" src="https://github.com/user-attachments/assets/dbd1c05f-53f7-4522-b467-f8510539dd93" />
+
 
 This example highlights that the sampler:
 - preserves complex prior geometry,
