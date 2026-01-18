@@ -151,13 +151,4 @@ truncation).
   <img src="figures/w2_vs_level.png" width="500" alt="Wasserstein distance vs level (empirical vs theoretical 2^{-n/2})">
 </p>
 
-## Relation to the research statement
 
-This repository contains a runnable refactor of the **completed project** (“telescoping diffusion SDE + multilevel SMC”):
-a coarse-to-fine posterior sampler with intermediate targets \(Q_n\), incremental reweighting, and branching-style resampling
-to mitigate particle degeneracy.:contentReference[oaicite:9]{index=9}:contentReference[oaicite:10]{index=10}
-
-It also includes the 2D toy experiments (Swiss-roll prior and skewed GMM prior) used to visualize coarse-to-fine refinement and
-validate the expected \(2^{-n/2}\) convergence trend under multiscale truncation.:contentReference[oaicite:11]{index=11}
-
-  
