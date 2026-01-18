@@ -142,7 +142,7 @@ strong error scales as `2^{-n/2}` (see the discussion in the research statement 
 truncation).
 
 ```math
-\left(\mathbb{E}\left[\sup_{t\in[0,1]}\|X(t)-X^{(n)}(t)\|^2\right]\right)^{1/2} = O\!\left(2^{-n/2}\right). math```
+\left(\mathbb{E}\left[\sup_{t\in[0,1]}\|X(t)-X^{(n)}(t)\|^2\right]\right)^{1/2} = O\!\left(2^{-n/2}\right). ```
 
 **Experiment:** the measured `W2` decreases with `n` and closely follows the predicted
 `2^{−n/2}` scaling.
