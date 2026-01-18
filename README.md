@@ -148,3 +148,62 @@ It also includes the 2D toy experiments (Swiss-roll prior and skewed GMM prior)
 used to visualize coarse-to-fine refinement and validate the expected
 `2^{−n/2}` convergence trend under multiscale truncation.
 
+## Ongoing work: prior generation at the coarsest level (comparison)
+
+This section connects the completed multiscale posterior sampler with the **ongoing project**
+described in the research statement.
+
+All figures below focus on **prior-only generation** (no likelihood, no selection) and visualize
+snapshots along a coarse time grid  
+`t ∈ {1.0, 0.8, 0.6, 0.4, 0.2, 0.0}`.
+
+**Legend (all plots in this section):**
+- **Blue**: reference marginal samples (`noise_data`)
+- **Orange**: generated samples (`gen_data`)
+
+---
+
+### (A) Level-0 sampler from the multiscale SDE construction
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/9d054bf1-74c7-4627-82b9-3873b13d28a8" width="1000">
+</p>
+
+
+This figure corresponds to the **0th (coarsest) level** of the telescoping / multiscale SDE
+used in the posterior sampler above.
+
+Only the coarsest noise modes are activated, producing a global diffusion trajectory.
+This level serves as the **base trajectory** on which finer multiscale corrections are built.
+
+---
+
+### (B) Standard diffusion sampler (baseline)
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/43c9ad6f-93ff-4c4c-b9b3-2531b0f91d5b" width="1000">
+</p>
+
+This figure shows a **standard diffusion sampler** applied to the same prior,
+using the full diffusion dynamics without multiscale decomposition.
+
+It is included as a baseline for comparison with the multiscale construction
+and the flow-matching approach.
+
+
+
+---
+
+### (C) Flow matching on the level-0 SDE (ongoing work)
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d03d11a6-ae63-4d0c-950b-63fdddd7e9d8" width="1000">
+</p>
+
+
+This figure shows **flow matching applied to the same level-0 SDE**.
+Here, the drift is learned directly via flow matching rather than simulated
+through a stochastic diffusion.
+
+The generated trajectories appear particularly clean: the learned flow transports
+samples smoothly between marginals and recovers the prior geometry accurately at final time.
