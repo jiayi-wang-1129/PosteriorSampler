@@ -115,7 +115,8 @@ Each level `n` corresponds to:
 
 - activation of finer noise modes in the diffusion,
 - injection of an incremental log-likelihood contribution `ΔL_n`,
-- an SMC-style update:
+* an SMC-style update:
+
 ```text
 propagate (activate finer noise modes) -> reweight with ΔL_n -> resample (branching)
 
