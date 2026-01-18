@@ -35,6 +35,42 @@ The prior distribution is a 2D Swiss-roll (spiral) distribution.
 A Gaussian likelihood centered near the spiral,
 with covariance proportional to the identity.
 
+
+<table>
+  <tr>
+    <td align="center">
+      <b>n = 1</b><br>
+      <img src="https://github.com/user-attachments/assets/cda67c6e-521b-45f8-a925-febf96c3c6ce" width="480">
+    </td>
+    <td align="center">
+      <b>n = 2</b><br>
+      <img src="https://github.com/user-attachments/assets/014518f7-7292-49b3-b5f0-d3594a4cb2e1" width="480">
+      <img width="830" height="373" alt="Screenshot 2026-01-17 at 9 06 03 PM" src="https://github.com/user-attachments/assets/05949b29-c9e3-4a93-ba43-bd60b10d3ad5" />
+
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <b>n = 3</b><br>
+      <img src="https://github.com/user-attachments/assets/4297ac34-86c9-40f6-b697-1a0bf8627106" width="480">
+    </td>
+    <td align="center">
+      <b>n = 4</b><br>
+      <img src="https://github.com/user-attachments/assets/cf31463d-2d75-4f57-9e56-eaf3220a9621" width="480"> 
+    </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2">
+      <b>n = 5</b><br>
+      <img src="https://github.com/user-attachments/assets/041cf2e3-e85d-43a8-b135-94fd050cdd36" width="480">
+    </td>
+  </tr>
+</table>
+
+
+
+
+
 **What the figures show**
 
 - At **early levels**, generated particles (orange) follow the coarse geometry
