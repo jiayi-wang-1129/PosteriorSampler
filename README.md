@@ -145,10 +145,19 @@ truncation).
 \left(\mathbb{E}\left[\sup_{t\in[0,1]}\|X(t)-X^{(n)}(t)\|^2\right]\right)^{1/2} = O\!\left(2^{-n/2}\right).
 
 
+**Experiment:** the measured `W2` decreases with `n` and closely follows the predicted `2^(-n/2)` scaling.
+
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/b1bd8a8e-d5a1-4b99-bca6-b53b39e2d060" width="500" alt="Wasserstein distance vs level (empirical vs theoretical 2^{-n/2})">
+  <img src="figures/w2_vs_level.png" width="500" alt="Wasserstein distance vs level (empirical vs theoretical 2^{-n/2})">
 </p>
-> In the plot, the blue curve shows the empirical `W2`, and the dashed curve shows the theoretical reference
-> `C * 2^(-n/2)` for a fitted constant `C`.
+
+## Relation to the research statement
+
+This repository contains a runnable refactor of the **completed project** (“telescoping diffusion SDE + multilevel SMC”):
+a coarse-to-fine posterior sampler with intermediate targets \(Q_n\), incremental reweighting, and branching-style resampling
+to mitigate particle degeneracy.:contentReference[oaicite:9]{index=9}:contentReference[oaicite:10]{index=10}
+
+It also includes the 2D toy experiments (Swiss-roll prior and skewed GMM prior) used to visualize coarse-to-fine refinement and
+validate the expected \(2^{-n/2}\) convergence trend under multiscale truncation.:contentReference[oaicite:11]{index=11}
 
   
