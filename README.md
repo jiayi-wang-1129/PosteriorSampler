@@ -207,3 +207,23 @@ through a stochastic diffusion.
 
 The generated trajectories appear particularly clean: the learned flow transports
 samples smoothly between marginals and recovers the prior geometry accurately at final time.
+
+## Next step (ongoing): coupling multiscale spatial modes + posterior tilting
+
+A nontrivial next step is to move from **multilevel prior generation** to **multilevel posterior sampling** under
+a flow-matching parameterization.
+
+So far, I have obtained **flow-matching formulations for the prior-generation SDE at all refinement levels**.
+This means the multiscale telescoping construction can be reproduced cleanly for the *prior* across scales.
+
+What remains is the core posterior challenge: **couple the spatial modes across levels and perform posterior
+fine tuning / tilting**.
+
+Concretely, the goal is to:
+- preserve the telescoping structure (coarse modes capture global structure; finer modes refine local detail), and
+- inject likelihood information in a **coarse-to-fine** manner so that the learned dynamics are progressively
+  tilted from the prior toward the posterior.
+
+This coupling/tilting step is the main technical bottleneck when replacing SMC-style reweighting/resampling with a
+fully amortized (flow-based) multiscale sampler.
+
