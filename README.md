@@ -44,9 +44,7 @@ with covariance proportional to the identity.
     </td>
     <td align="center">
       <b>n = 2</b><br>
-      <img src="https://github.com/user-attachments/assets/014518f7-7292-49b3-b5f0-d3594a4cb2e1" width="480">
-      <img width="830" height="373" alt="Screenshot 2026-01-17 at 9 06 03 PM" src="https://github.com/user-attachments/assets/05949b29-c9e3-4a93-ba43-bd60b10d3ad5" />
-
+      <img src="https://github.com/user-attachments/assets/a782175f-f815-468c-a2a4-c416c62edcce" width="480">
     </td>
   </tr>
   <tr>
