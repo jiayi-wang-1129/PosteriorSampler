@@ -14,36 +14,37 @@ a multilevel (telescoping) noise decomposition.
 - **Orange**: generated particles (proposal at this level)  
 - **Green**: selected particles after reweighting/resampling at this level  
 - **Blue**: reference posterior samples (ground-truth / target)
-
 **What the figures show**
-- At **early levels**, generated particles (orange) follow the coarse geometry of the Swiss-roll prior.
-- As refinement increases, likelihood information is injected **incrementally**.
-- The **selected particles** (green) increasingly concentrate along spiral regions compatible with the likelihood.
-- By the final level, selected particles closely align with the **true posterior** (blue).
 
-<table>
-  <tr>
-    <td align="center"><b>n = 1</b><br>
-      <img src="https://github.com/user-attachments/assets/8f8bfed2-bdfd-4584-b844-294c17b5561f" width="460">
-    </td>
-    <td align="center"><b>n = 2</b><br>
-      <img src="https://github.com/user-attachments/assets/014518f7-7292-49b3-b5f0-d3594a4cb2e1" width="460">
-    </td>
-  </tr>
-  <tr>
-    <td align="center"><b>n = 3</b><br>
-      <img src="https://github.com/user-attachments/assets/c452fc07-2ffc-4656-999d-aa74b32c41c2" width="460">
-    </td>
-    <td align="center"><b>n = 4</b><br>
-      <img src="https://github.com/user-attachments/assets/bb291758-aacb-44fa-bd57-22d4e366846f" width="460">
-    </td>
-  </tr>
-  <tr>
-    <td align="center" colspan="2"><b>n = 5</b><br>
-      <img src="https://github.com/user-attachments/assets/dbd1c05f-53f7-4522-b467-f8510539dd93" width="460">
-    </td>
-  </tr>
-</table>
+- At **early levels**, generated particles (orange) follow the coarse geometry of the Swiss-roll prior.
+- As refinement levels increase, likelihood information is injected incrementally.
+- The **selected particles** (green) increasingly concentrate along regions of the spiral that are compatible with the likelihood.
+- By the final level, the selected particles closely align with the **true posterior samples** (blue).
+
+<p align="center"><b>n = 1</b><br>
+  <img src="https://github.com/user-attachments/assets/8f8bfed2-bdfd-4584-b844-294c17b5561f" width="650">
+</p>
+
+<p align="center"><b>n = 2</b><br>
+  <img src="https://github.com/user-attachments/assets/014518f7-7292-49b3-b5f0-d3594a4cb2e1" width="650">
+</p>
+
+<p align="center"><b>n = 3</b><br>
+  <img src="https://github.com/user-attachments/assets/c452fc07-2ffc-4656-999d-aa74b32c41c2" width="650">
+</p>
+
+<p align="center"><b>n = 4</b><br>
+  <img src="https://github.com/user-attachments/assets/bb291758-aacb-44fa-bd57-22d4e366846f" width="650">
+</p>
+
+<p align="center"><b>n = 5</b><br>
+  <img src="https://github.com/user-attachments/assets/dbd1c05f-53f7-4522-b467-f8510539dd93" width="650">
+</p>
+
+This example highlights that the sampler:
+- preserves complex prior geometry,
+- and incorporates likelihood information without collapsing particles prematurely.
+
 
 ---
 
