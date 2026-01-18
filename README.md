@@ -169,7 +169,7 @@ and a reference set of **target posterior samples**.
 **Experiment:** the measured `W2` decreases with `n` and closely follows the predicted `2^(-n/2)` scaling.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/b1bd8a8e-d5a1-4b99-bca6-b53b39e2d060" width="900" alt="Wasserstein distance vs level (empirical vs theoretical 2^{-n/2})">
+  <img src="https://github.com/user-attachments/assets/b1bd8a8e-d5a1-4b99-bca6-b53b39e2d060" width="500" alt="Wasserstein distance vs level (empirical vs theoretical 2^{-n/2})">
 </p>
 > In the plot, the blue curve shows the empirical `W2`, and the dashed curve shows the theoretical reference
 > `C * 2^(-n/2)` for a fitted constant `C`.
