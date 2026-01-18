@@ -1,4 +1,4 @@
-# Telescoping Posterior Sampling (2D Toy Examples)
+# Installation and Overview
 
 This repository is a cleaned and modular refactor of two original exploratory Jupyter notebooks:
 
