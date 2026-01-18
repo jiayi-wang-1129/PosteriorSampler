@@ -132,36 +132,35 @@ Each level `n` corresponds to:
 
 - activation of finer noise modes in the diffusion,
 - injection of an incremental log-likelihood contribution `ΔL_n`,
-- an SMC-style update:
-
+- an SMC-style update
+  
 ## Convergence with refinement level
 
 A key theoretical feature of the telescoping / multiscale construction is that truncating the driving
-noise at level \(n\) yields an error that decays geometrically. For Haar/Schauder truncations, the
-strong error scales as \(2^{-n/2}\) (see the discussion in the research statement on convergence under
+noise at level `n` yields an error that decays geometrically. For Haar/Schauder truncations, the
+strong error scales as `2^{-n/2}` (see the discussion in the research statement on convergence under
 truncation).
 
-```math
-\left(\mathbb{E}\left[\sup_{t\in[0,1]}\|X(t)-X^{(n)}(t)\|^2\right]\right)^{1/2} = O\!\left(2^{-n/2}\right).
+(E[ sup_{t ∈ [0,1]} || X(t) − X^{(n)}(t) ||^2 ])^{1/2} = O(2^{−n/2})
 
-
-**Experiment:** the measured `W2` decreases with `n` and closely follows the predicted `2^(-n/2)` scaling.
+**Experiment:** the measured `W2` decreases with `n` and closely follows the predicted
+`2^{−n/2}` scaling.
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/ea9df891-e8e1-431f-be47-55bf89e854ee" width="500" alt="Wasserstein distance vs level (empirical vs theoretical 2^{-n/2})">
+  <img src="https://github.com/user-attachments/assets/ea9df891-e8e1-431f-be47-55bf89e854ee"
+       width="500"
+       alt="Wasserstein distance vs level (empirical vs theoretical 2^{-n/2})">
 </p>
-
-
 
 ## Relation to the research statement
 
-This repository contains a runnable refactor of the **completed project** (“telescoping diffusion SDE + multilevel SMC”):
-a coarse-to-fine posterior sampler with intermediate targets \(Q_n\), incremental reweighting, and branching-style resampling
-to mitigate particle degeneracy.:contentReference[oaicite:9]{index=9}:contentReference[oaicite:10]{index=10}
+This repository contains a runnable refactor of the **completed project**
+(“telescoping diffusion SDE + multilevel SMC”):
+a coarse-to-fine posterior sampler with intermediate targets `Q_n`,
+incremental reweighting, and branching-style resampling
+to mitigate particle degeneracy.
 
-It also includes the 2D toy experiments (Swiss-roll prior and skewed GMM prior) used to visualize coarse-to-fine refinement and
-validate the expected \(2^{-n/2}\) convergence trend under multiscale truncation.:contentReference[oaicite:11]{index=11}
-
-  
-
+It also includes the 2D toy experiments (Swiss-roll prior and skewed GMM prior)
+used to visualize coarse-to-fine refinement and validate the expected
+`2^{−n/2}` convergence trend under multiscale truncation.
 
