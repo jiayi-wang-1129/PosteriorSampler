@@ -1,10 +1,5 @@
 # Installation and Overview
 
-This repository is a cleaned and modular refactor of two original exploratory Jupyter notebooks:
-
-- `PosNegativemeanEvolution.ipynb`
-- `SwissPosEvolution(2,3).ipynb`
-
 The goal is to generate **posterior samples** using a **pretrained score network for the prior** together with a
 **telescoping (multilevel) noise decomposition** and **SMC-style reweighting and resampling** at each refinement level.
 
