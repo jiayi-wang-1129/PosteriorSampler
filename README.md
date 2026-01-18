@@ -10,7 +10,7 @@ a multilevel (telescoping) noise decomposition.
 
 ## Swiss-roll prior (2D): level-wise particle evolution
 
-**Legend.**  
+**Legend**  
 - **Orange**: generated particles (proposal at this level)  
 - **Green**: selected particles after reweighting/resampling at this level  
 - **Blue**: reference posterior samples (ground-truth / target)
@@ -115,7 +115,10 @@ Each level `n` corresponds to:
 
 - activation of finer noise modes in the diffusion,
 - injection of an incremental log-likelihood contribution `ΔL_n`,
-- an SMC-style update
+- an SMC-style update:
+```text
+propagate (activate finer noise modes) -> reweight with ΔL_n -> resample (branching)
+
   
 ## Convergence with refinement level
 
