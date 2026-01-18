@@ -7,24 +7,7 @@ The goal of these experiments is to visualize how posterior mass is constructed
 **coarse-to-fine** when likelihood information is injected incrementally through
 a multilevel (telescoping) noise decomposition.
 
----
 
-## Color convention (important)
-
-Across **all figures and levels**, the same color scheme is used:
-
-- **Orange dots**: generated particles at the current level  
-  (before resampling / selection)
-
-- **Green dots**: selected particles at that level  
-  (particles with nonzero offspring after branching resampling)
-
-- **Blue dots**: reference posterior samples  
-  (ground-truth posterior samples, used only for visualization)
-
-This color convention is consistent across levels and examples.
-
----
 ## Swiss-roll prior (2D): level-wise particle evolution
 
 **Legend.**  
