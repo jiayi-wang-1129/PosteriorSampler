@@ -26,27 +26,27 @@ a multilevel (telescoping) noise decomposition.
   <tr>
     <td align="center">
       <b>n = 1</b><br>
-      <img src="https://github.com/user-attachments/assets/8f8bfed2-bdfd-4584-b844-294c17b5561f" width="480">
+      <img src="https://github.com/user-attachments/assets/742fb277-ccc7-49bb-98e7-4ca64029876d" width="480">
     </td>
     <td align="center">
       <b>n = 2</b><br>
-      <img src="https://github.com/user-attachments/assets/014518f7-7292-49b3-b5f0-d3594a4cb2e1" width="480">
+      <img src="https://github.com/user-attachments/assets/b4af683a-4518-4fd5-8ae6-9e8deba3294f" width="480">
     </td>
   </tr>
   <tr>
     <td align="center">
       <b>n = 3</b><br>
-      <img src="https://github.com/user-attachments/assets/c452fc07-2ffc-4656-999d-aa74b32c41c2" width="480">
+      <img src="https://github.com/user-attachments/assets/aeb65fb1-d40f-448f-9297-b4aad7a3c1b4" width="480">
     </td>
     <td align="center">
       <b>n = 4</b><br>
-      <img src="https://github.com/user-attachments/assets/bb291758-aacb-44fa-bd57-22d4e366846f" width="480">
+      <img src="https://github.com/user-attachments/assets/e3833ecb-53d5-411b-9102-ba3492f96aa6" width="480">
     </td>
   </tr>
   <tr>
     <td align="center" colspan="2">
       <b>n = 5</b><br>
-      <img src="https://github.com/user-attachments/assets/dbd1c05f-53f7-4522-b467-f8510539dd93" width="480">
+      <img src="https://github.com/user-attachments/assets/f98daac0-ae91-400d-833e-38038e1c9bd9" width="480">
     </td>
   </tr>
 </table>
