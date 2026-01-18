@@ -156,4 +156,22 @@ Each level `n` corresponds to:
 - activation of finer noise modes in the diffusion,
 - injection of an incremental log-likelihood contribution `ΔL_n`,
 - an SMC-style update:
+
+## Convergence in Wasserstein distance (W2)
+
+We also track the empirical 2-Wasserstein distance `W2` between the **selected particle set** at refinement level `n`
+and a reference set of **target posterior samples**.
+
+**Theory:** the multilevel refinement predicts a convergence rate of the form
+
+- `W2(n) = O(2^(-n/2))`  (equivalently: `W2(n) <= C * 2^(-n/2)` for some constant `C`)
+
+**Experiment:** the measured `W2` decreases with `n` and closely follows the predicted `2^(-n/2)` scaling.
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b1bd8a8e-d5a1-4b99-bca6-b53b39e2d060" width="900" alt="Wasserstein distance vs level (empirical vs theoretical 2^{-n/2})">
+</p>
+> In the plot, the blue curve shows the empirical `W2`, and the dashed curve shows the theoretical reference
+> `C * 2^(-n/2)` for a fitted constant `C`.
+
   
