@@ -1,19 +1,39 @@
-# Telescoping Posterior Sampling (toy 2D examples)
+# Telescoping Posterior Sampling (2D Toy Examples)
 
-This repo is a cleaned-up refactor of two original Jupyter notebooks:
+This repository is a cleaned and modular refactor of two original exploratory Jupyter notebooks:
 
 - `PosNegativemeanEvolution.ipynb`
 - `SwissPosEvolution(2,3).ipynb`
 
-The goal is to generate **posterior samples** using a **pretrained score network for the prior**, and a **telescoping / multilevel noise decomposition** with SMC-style reweighting + resampling at each refinement level.
+The goal is to generate **posterior samples** using a **pretrained score network for the prior** together with a
+**telescoping (multilevel) noise decomposition** and **SMC-style reweighting and resampling** at each refinement level.
+
+This code focuses on **2D toy problems** (GMM and Swiss-roll priors) and is intended to be **readable and easy to modify**
+rather than optimized.
+
+---
+
+## Method overview
+
+- We assume access to samples from a prior \(p(x)\).
+- We train a score network \(s_\theta(t,x) \approx \nabla_x \log p_t(x)\) for the prior (once).
+- We define a Gaussian likelihood (toy example), with an observation distribution
+  \[
+    y \sim \mathcal{N}(\mu,\, 3 I_2).
+  \]
+  The likelihood is injected across refinement levels via a precomputed decomposition \(L_n\) (incremental log-likelihoods \(\Delta L_n\)).
+- Sampling proceeds from coarse to fine using a multilevel Haar/Schauder-style noise basis.
+- At each level: propagate → reweight by \(\exp(\Delta L_n)\) → resample (default: branching).
+
+---
 
 ## What’s in this repo
 
 - `src/telescoping_posterior/`
   - `priors.py`: GMM prior and 2D Swiss-roll (spiral) prior
   - `score_model.py`: Flax MLP score network
-  - `training.py`: small denoising-score-matching trainer (optional)
-  - `noise_basis.py`: piecewise-constant Haar/Schauder-style noise basis
+  - `training.py`: denoising score-matching trainer (optional)
+  - `noise_basis.py`: Haar/Schauder-style multilevel noise basis
   - `likelihood.py`: Gaussian likelihood schedule (level-wise)
   - `sampler.py`: `TelescopingPosteriorSampler` (main class)
   - `plotting.py`: plotting helpers
@@ -22,61 +42,9 @@ The goal is to generate **posterior samples** using a **pretrained score network
   - `swiss_roll_demo.py`: run the Swiss-roll posterior-sampling example
 - `notebooks/original/`: the original notebooks (kept as-is)
 
-## Installation
+---
 
-Create an environment and install dependencies:
+## Installation
 
 ```bash
 pip install -r requirements.txt
-```
-
-> Note: JAX installation differs depending on CPU/GPU. If you want GPU support, follow the official JAX install instructions.
-
-## Running the examples
-
-From the repo root:
-
-```bash
-# Make the package importable
-export PYTHONPATH=src
-
-# GMM case
-python examples/gmm_demo.py --train_steps 3000 --n_particles 2000 --n_levels 5
-
-# Swiss-roll case
-python examples/swiss_roll_demo.py --train_steps 3000 --n_particles 3000 --n_levels 5
-```
-
-Each script will:
-1. Train a score network (unless you pass `--checkpoint`)
-2. Run the telescoping sampler
-3. Save plots to `outputs/.../`
-
-### Using checkpoints
-
-Train once and save params:
-
-```bash
-export PYTHONPATH=src
-python examples/gmm_demo.py --train_steps 20000 --save_checkpoint checkpoints/gmm.msgpack
-```
-
-Then load them:
-
-```bash
-export PYTHONPATH=src
-python examples/gmm_demo.py --checkpoint checkpoints/gmm.msgpack
-```
-
-## Notes
-
-- This code is focused on 2D toy problems and is meant to be readable and easy to modify.
-- The example likelihood schedules are **hard-coded** (taken from the notebooks), since they were already computed there.
-- The default resampling strategy is the notebook’s **branching** resampler (particle count can change across levels). You can switch to `multinomial` in `SamplerConfig`.
-
-## Repo structure (suggested)
-
-If you publish to GitHub, consider adding:
-- a `LICENSE`
-- CI (black/ruff, unit tests)
-- a short project description / figure in the README
